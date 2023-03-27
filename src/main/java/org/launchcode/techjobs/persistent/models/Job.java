@@ -3,35 +3,19 @@ package org.launchcode.techjobs.persistent.models;
 import javax.persistence.*;
 
 @Entity
-public class Job{
-
-    @Id
-    @GeneratedValue
-    private int id;
-
-    private String name;
+public class Job extends AbstractEntity {
 
     private String employer;
     private String skills;
 
-    public Job() {
-    }
-
     public Job(String anEmployer, String someSkills) {
-        super();
         this.employer = anEmployer;
         this.skills = someSkills;
     }
 
+    public Job () {}
+
     // Getters and setters.
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmployer() {
         return employer;
