@@ -1,12 +1,9 @@
 -- Part 1: Test it with SQL
-    --    CREATE TABLE job (
-    --         id INT,
-    --         employer VARCHAR,
-    --         name VARCHAR,
-    --         skills
-    --    );
+    SELECT * FROM job;
 
 -- Part 2: Test it with SQL
+
+
 
 -- Part 3: Test it with SQL
 

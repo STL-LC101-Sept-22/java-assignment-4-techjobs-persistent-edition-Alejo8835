@@ -8,9 +8,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Employer extends AbstractEntity {
 
-    @OneToOne
-    @NotBlank
-    @Size(min = 3, max = 20)
+    @NotBlank(message = "Location is required.")
+    @Size(min = 3, max = 20, message = "Location must be between 3 and 20 characters.")
     private String location;
 
     public Employer(String location) {
