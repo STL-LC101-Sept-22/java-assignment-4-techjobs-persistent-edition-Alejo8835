@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.persistent.controllers;
 
+import org.launchcode.techjobs.persistent.models.Employer;
 import org.launchcode.techjobs.persistent.models.Job;
 import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by LaunchCode
@@ -43,6 +45,13 @@ public class HomeController {
             model.addAttribute("title", "Add Job");
             return "add";
         }
+
+        Optional<Employer> result = employerRepository.findById(employerId);
+        if (result.isPresent()) {
+            Employer employer = result.get();
+            newJob.setEmployer(employer);
+        }
+
 
         return "redirect:";
     }

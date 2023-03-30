@@ -17,10 +17,12 @@ public class Job extends AbstractEntity {
     public Job () {}
 
     public Employer getEmployer() {
+
         return employer;
     }
 
     public void setEmployer(Employer employer) {
+
         this.employer = employer;
     }
 
